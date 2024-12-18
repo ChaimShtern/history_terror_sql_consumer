@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from app.models import Base
-from app.models.atteck_group_bridge_model import attack_group_association
+from app.models.attack_group_bridge_model import attack_group_association
 
 
 class Group(Base):

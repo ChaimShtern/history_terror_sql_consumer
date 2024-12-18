@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import relationship
 from app.models import Base
-from app.models.atteck_group_bridge_model import attack_group_association
+from app.models.attack_group_bridge_model import attack_group_association
 
 
 class Attack(Base):
@@ -22,9 +22,9 @@ class Attack(Base):
     source2 = Column(Text)
     source3 = Column(Text)
 
-    target_type = Column(String)
-    target_description = Column(Text)
-    target_nationality = Column(String)
+    target_type1 = Column(String)
+    target_type2 = Column(String)
+    target_type3 = Column(String)
 
     location_id = Column(Integer, ForeignKey("locations.id"))
     location = relationship("Location", back_populates="attacks")

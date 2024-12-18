@@ -17,3 +17,6 @@ def create_tables():
 
 def drop_tables():
     Base.metadata.drop_all(engine)
+
+drop_tables()
+create_tables()
