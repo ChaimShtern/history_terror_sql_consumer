@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from app.models import Base
+from app.models.atteck_group_bridge_model import attack_group_association
 
 
 class Group(Base):
@@ -11,4 +12,4 @@ class Group(Base):
     uncertain = Column(Boolean)
     num_perpetrators = Column(Integer)
 
-    attacks = relationship("Attack", back_populates="group")
+    attacks = relationship("Attack", secondary=attack_group_association, back_populates="groups")
